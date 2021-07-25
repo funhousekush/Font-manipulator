@@ -23,6 +23,7 @@ function draw()
     textSize(difference);
     fill("#FFE787");
     text("Peter", 50, 400);
+    document.getElementById("Font_size").innerHTML = difference;
 }
 
 function modelLoaded()
