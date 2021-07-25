@@ -1,3 +1,7 @@
+leftwristX = 0;
+rightwristX = 0;
+difference = 0;
+
 function preload(){}
 
 function setup() 
@@ -15,6 +19,10 @@ function setup()
 function draw() 
 {
     background("#ff0000");
+
+    textSize(difference);
+    fill("#FFE787");
+    text("Peter", 50, 400);
 }
 
 function modelLoaded()
@@ -27,5 +35,8 @@ function gotFixed(results)
     if(results.length > 0)
     {
         console.log(results);
+        leftwristX = results[0].pose.leftWrist.x;
+        rightwristX = results[0].pose.rightWrist.x;
+        difference = ceil(leftwristX - rightwristX);
     }
 }
